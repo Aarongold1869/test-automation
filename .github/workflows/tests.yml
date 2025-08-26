@@ -6,13 +6,6 @@ on:
   - pull_request
 
 jobs:
-  pytest-test:
-    script:
-      - pytest --junitxml=test-results.xml
-    artifacts:
-      reports:
-        junit: test-results.xml
-        
   test:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -31,6 +24,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install tox tox-gh-actions
     - name: Test with tox
-      run: tox
+      run: |
+        tox
+        pytest --junitxml=test-results.xml
+
+    artifacts:
+      reports:
+        junit: test-results.xml
 
     
