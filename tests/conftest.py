@@ -5,6 +5,7 @@ import sqlite3
 
 TMP_PATH = pathlib.Path.cwd()
 
+
 @pytest.fixture(scope="session")
 def temp_db():
     db_path = TMP_PATH / "test.db"

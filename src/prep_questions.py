@@ -29,7 +29,7 @@ print(first_non_repeating_char('ssfffgggtppdddqqqiidjjj'))
 # Given a list of integers, return the two numbers that add up to a target sum. Optimize for time.
 
 
-def two_sum(nums: List[int], target: int) -> Tuple[int] | None:
+def two_sum(nums: List[int], target: int) -> Tuple[int, int] | None:
     compliments = {n: i for i, n in enumerate(nums)}
     for i, n in enumerate(nums):
         compliment = target - n

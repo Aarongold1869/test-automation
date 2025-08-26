@@ -1,6 +1,7 @@
 import pytest
 from adding.add_numbers import add_two_numbers
 
+
 @pytest.mark.parametrize("test_input,expected", [
     ((2, 2), 4),
     ((50, 51), 101),
